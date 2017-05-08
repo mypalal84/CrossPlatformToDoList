@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F0BF0081EC0DDA20060462B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0071EC0DDA20060462B /* main.m */; };
+		7F0BF00B1EC0DDA20060462B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF00A1EC0DDA20060462B /* AppDelegate.m */; };
+		7F0BF00E1EC0DDA20060462B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF00D1EC0DDA20060462B /* ViewController.m */; };
+		7F0BF0111EC0DDA20060462B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF00F1EC0DDA20060462B /* Main.storyboard */; };
+		7F0BF0131EC0DDA20060462B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF0121EC0DDA20060462B /* Assets.xcassets */; };
+		7F0BF0161EC0DDA20060462B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF0141EC0DDA20060462B /* LaunchScreen.storyboard */; };
+		7F0BF01E1EC0DFF90060462B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF01D1EC0DFF90060462B /* GoogleService-Info.plist */; };
+		7F0BF0241EC0EBCB0060462B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0231EC0EBCB0060462B /* LoginViewController.m */; };
+		8B9E301D60C98D8D2768ADDA /* libPods-CrossPlatformToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		262240ACB357405DDA22C373 /* Pods-CrossPlatformToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList.debug.xcconfig"; sourceTree = "<group>"; };
+		6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossPlatformToDoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F0BF0031EC0DDA20060462B /* CrossPlatformToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossPlatformToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F0BF0071EC0DDA20060462B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F0BF0091EC0DDA20060462B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7F0BF00A1EC0DDA20060462B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7F0BF00C1EC0DDA20060462B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7F0BF00D1EC0DDA20060462B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7F0BF0101EC0DDA20060462B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F0BF0121EC0DDA20060462B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F0BF0151EC0DDA20060462B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F0BF0171EC0DDA20060462B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F0BF01D1EC0DFF90060462B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F0BF0221EC0EBCB0060462B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7F0BF0231EC0EBCB0060462B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A4FDD9D1DE89F9CD85AB8961 /* Pods-CrossPlatformToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F0BF0001EC0DDA20060462B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B9E301D60C98D8D2768ADDA /* libPods-CrossPlatformToDoList.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E2855C60C06FD860122DBD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				262240ACB357405DDA22C373 /* Pods-CrossPlatformToDoList.debug.xcconfig */,
+				A4FDD9D1DE89F9CD85AB8961 /* Pods-CrossPlatformToDoList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7F0BEFFA1EC0DDA20060462B = {
+			isa = PBXGroup;
+			children = (
+				7F0BF0051EC0DDA20060462B /* CrossPlatformToDoList */,
+				7F0BF0041EC0DDA20060462B /* Products */,
+				2E2855C60C06FD860122DBD3 /* Pods */,
+				E167ED59860D91E3AB8B6A1B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7F0BF0041EC0DDA20060462B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BF0031EC0DDA20060462B /* CrossPlatformToDoList.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F0BF0051EC0DDA20060462B /* CrossPlatformToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BF0211EC0E6A20060462B /* Models */,
+				7F0BF0201EC0E6A00060462B /* Views */,
+				7F0BF01F1EC0E69E0060462B /* Controllers */,
+				7F0BF0121EC0DDA20060462B /* Assets.xcassets */,
+				7F0BF0171EC0DDA20060462B /* Info.plist */,
+				7F0BF01D1EC0DFF90060462B /* GoogleService-Info.plist */,
+				7F0BF0061EC0DDA20060462B /* Supporting Files */,
+			);
+			path = CrossPlatformToDoList;
+			sourceTree = "<group>";
+		};
+		7F0BF0061EC0DDA20060462B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BF0071EC0DDA20060462B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F0BF01F1EC0E69E0060462B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BF0221EC0EBCB0060462B /* LoginViewController.h */,
+				7F0BF0231EC0EBCB0060462B /* LoginViewController.m */,
+				7F0BF0091EC0DDA20060462B /* AppDelegate.h */,
+				7F0BF00A1EC0DDA20060462B /* AppDelegate.m */,
+				7F0BF00C1EC0DDA20060462B /* ViewController.h */,
+				7F0BF00D1EC0DDA20060462B /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7F0BF0201EC0E6A00060462B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F0BF00F1EC0DDA20060462B /* Main.storyboard */,
+				7F0BF0141EC0DDA20060462B /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7F0BF0211EC0E6A20060462B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E167ED59860D91E3AB8B6A1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F0BF0021EC0DDA20060462B /* CrossPlatformToDoList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F0BF01A1EC0DDA20060462B /* Build configuration list for PBXNativeTarget "CrossPlatformToDoList" */;
+			buildPhases = (
+				3CC4306F77BCFDE42147EFC9 /* [CP] Check Pods Manifest.lock */,
+				7F0BEFFF1EC0DDA20060462B /* Sources */,
+				7F0BF0001EC0DDA20060462B /* Frameworks */,
+				7F0BF0011EC0DDA20060462B /* Resources */,
+				E3EA3B019FE63CAF64C780EF /* [CP] Embed Pods Frameworks */,
+				D4E31C32A276330002B7AA27 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrossPlatformToDoList;
+			productName = CrossPlatformToDoList;
+			productReference = 7F0BF0031EC0DDA20060462B /* CrossPlatformToDoList.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F0BEFFB1EC0DDA20060462B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "A Cahn";
+				TargetAttributes = {
+					7F0BF0021EC0DDA20060462B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2E5N5854VJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7F0BEFFE1EC0DDA20060462B /* Build configuration list for PBXProject "CrossPlatformToDoList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F0BEFFA1EC0DDA20060462B;
+			productRefGroup = 7F0BF0041EC0DDA20060462B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F0BF0021EC0DDA20060462B /* CrossPlatformToDoList */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F0BF0011EC0DDA20060462B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F0BF0161EC0DDA20060462B /* LaunchScreen.storyboard in Resources */,
+				7F0BF01E1EC0DFF90060462B /* GoogleService-Info.plist in Resources */,
+				7F0BF0131EC0DDA20060462B /* Assets.xcassets in Resources */,
+				7F0BF0111EC0DDA20060462B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CC4306F77BCFDE42147EFC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D4E31C32A276330002B7AA27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3EA3B019FE63CAF64C780EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F0BEFFF1EC0DDA20060462B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F0BF0241EC0EBCB0060462B /* LoginViewController.m in Sources */,
+				7F0BF00E1EC0DDA20060462B /* ViewController.m in Sources */,
+				7F0BF00B1EC0DDA20060462B /* AppDelegate.m in Sources */,
+				7F0BF0081EC0DDA20060462B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7F0BF00F1EC0DDA20060462B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F0BF0101EC0DDA20060462B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F0BF0141EC0DDA20060462B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F0BF0151EC0DDA20060462B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F0BF0181EC0DDA20060462B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F0BF0191EC0DDA20060462B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F0BF01B1EC0DDA20060462B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262240ACB357405DDA22C373 /* Pods-CrossPlatformToDoList.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2E5N5854VJ;
+				INFOPLIST_FILE = CrossPlatformToDoList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcahn.CrossPlatformToDoList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7F0BF01C1EC0DDA20060462B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4FDD9D1DE89F9CD85AB8961 /* Pods-CrossPlatformToDoList.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2E5N5854VJ;
+				INFOPLIST_FILE = CrossPlatformToDoList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcahn.CrossPlatformToDoList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F0BEFFE1EC0DDA20060462B /* Build configuration list for PBXProject "CrossPlatformToDoList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F0BF0181EC0DDA20060462B /* Debug */,
+				7F0BF0191EC0DDA20060462B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F0BF01A1EC0DDA20060462B /* Build configuration list for PBXNativeTarget "CrossPlatformToDoList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F0BF01B1EC0DDA20060462B /* Debug */,
+				7F0BF01C1EC0DDA20060462B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F0BEFFB1EC0DDA20060462B /* Project object */;
+}
