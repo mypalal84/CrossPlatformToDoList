@@ -15,6 +15,7 @@
 		7F0BF0161EC0DDA20060462B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF0141EC0DDA20060462B /* LaunchScreen.storyboard */; };
 		7F0BF01E1EC0DFF90060462B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF01D1EC0DFF90060462B /* GoogleService-Info.plist */; };
 		7F0BF0241EC0EBCB0060462B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0231EC0EBCB0060462B /* LoginViewController.m */; };
+		7F0BF0271EC10E620060462B /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0261EC10E620060462B /* NewTodoViewController.m */; };
 		8B9E301D60C98D8D2768ADDA /* libPods-CrossPlatformToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,8 @@
 		7F0BF01D1EC0DFF90060462B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F0BF0221EC0EBCB0060462B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7F0BF0231EC0EBCB0060462B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7F0BF0251EC10E620060462B /* NewTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTodoViewController.h; sourceTree = "<group>"; };
+		7F0BF0261EC10E620060462B /* NewTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTodoViewController.m; sourceTree = "<group>"; };
 		A4FDD9D1DE89F9CD85AB8961 /* Pods-CrossPlatformToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +104,8 @@
 		7F0BF01F1EC0E69E0060462B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F0BF0251EC10E620060462B /* NewTodoViewController.h */,
+				7F0BF0261EC10E620060462B /* NewTodoViewController.m */,
 				7F0BF0221EC0EBCB0060462B /* LoginViewController.h */,
 				7F0BF0231EC0EBCB0060462B /* LoginViewController.m */,
 				7F0BF0091EC0DDA20060462B /* AppDelegate.h */,
@@ -262,6 +267,7 @@
 				7F0BF0241EC0EBCB0060462B /* LoginViewController.m in Sources */,
 				7F0BF00E1EC0DDA20060462B /* ViewController.m in Sources */,
 				7F0BF00B1EC0DDA20060462B /* AppDelegate.m in Sources */,
+				7F0BF0271EC10E620060462B /* NewTodoViewController.m in Sources */,
 				7F0BF0081EC0DDA20060462B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

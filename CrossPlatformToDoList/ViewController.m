@@ -34,6 +34,12 @@
     [self checkUserStatus];
 }
 
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    [super prepareForSegue:segue sender:sender];
+//    
+//    NSLog(@"%@", segue.destinationViewController);
+//}
+
 
 -(void)checkUserStatus{
     
