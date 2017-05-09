@@ -13,14 +13,17 @@
 @import FirebaseAuth;
 @import Firebase;
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property(strong, nonatomic)FIRDatabaseReference *userReference;
 @property(strong, nonatomic)FIRUser *currentUser;
 
 @property(nonatomic)FIRDatabaseHandle allTodosHandler;
+@property(strong, nonatomic)NSMutableArray *allTodos;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todoViewTopConstraint;
+
+@property (weak, nonatomic) IBOutlet UITableView *todoTableView;
 
 @end
 
@@ -30,13 +33,13 @@
     [super viewDidLoad];
     
     self.todoViewTopConstraint.constant = -214;
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
     [self checkUserStatus];
+    self.todoTableView.dataSource = self;
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -75,7 +78,7 @@
     
     self.allTodosHandler = [[self.userReference child:@"todos"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
-        NSMutableArray *allTodos = [[NSMutableArray alloc]init];
+        self.allTodos = [[NSMutableArray alloc]init];
         
         for (FIRDataSnapshot *child in snapshot.children) {
             
@@ -84,6 +87,9 @@
             NSString *todoTitle = todoData[@"title"];
             NSString *todoContent = todoData[@"content"];
             
+            [self.allTodos addObject:todoData];
+            [self.todoTableView reloadData];
+
             //for lab append new 'todo' to allTodos array
             NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
         }
@@ -91,7 +97,29 @@
 }
 
 
+//MARK: TableView Methods
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    NSDictionary *todoData = self.allTodos[indexPath.row];
+    
+    NSString *todoTitle = todoData[@"title"];
+    NSString *todoContent = todoData[@"content"];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Title: %@ - Content: %@", todoTitle, todoContent];
+    
+    return cell;
+}
 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return [self.allTodos count];
+}
+
+
+//MARK: Buttons Pressed
 - (IBAction)logoutPressed:(id)sender {
     
     NSError *signOutError;
