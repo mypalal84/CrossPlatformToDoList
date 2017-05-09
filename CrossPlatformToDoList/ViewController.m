@@ -104,14 +104,23 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    tableView.estimatedRowHeight = 85.0;
+    
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    
     return [self.allTodos count];
 }
+
 
 //MARK: Buttons Pressed
 - (IBAction)logoutPressed:(id)sender {
     
     NSError *signOutError;
     [[FIRAuth auth]signOut:&signOutError];
+    
+    [self.allTodos removeAllObjects];
+    [self.todoTableView reloadData];
+    
     [self checkUserStatus];
 }
 
