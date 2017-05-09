@@ -14,7 +14,6 @@
 @interface NewTodoViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *contentTextField;
 
 
@@ -27,7 +26,7 @@
     
 }
 
-- (IBAction)addTodoPressed:(id)sender {
+- (IBAction)addTodoButtonPressed:(id)sender {
     
     FIRDatabaseReference *databaseReference = [[FIRDatabase database]reference];
     

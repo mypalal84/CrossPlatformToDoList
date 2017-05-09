@@ -17,12 +17,9 @@
 
 @property(strong, nonatomic)FIRDatabaseReference *userReference;
 @property(strong, nonatomic)FIRUser *currentUser;
-
 @property(nonatomic)FIRDatabaseHandle allTodosHandler;
 @property(strong, nonatomic)NSMutableArray *allTodos;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todoViewTopConstraint;
-
 @property (weak, nonatomic) IBOutlet UITableView *todoTableView;
 
 @end
@@ -41,13 +38,6 @@
     [self checkUserStatus];
     self.todoTableView.dataSource = self;
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    [super prepareForSegue:segue sender:sender];
-//    
-//    NSLog(@"%@", segue.destinationViewController);
-//}
-
 
 -(void)checkUserStatus{
     
@@ -89,13 +79,11 @@
             
             [self.allTodos addObject:todoData];
             [self.todoTableView reloadData];
-
-            //for lab append new 'todo' to allTodos array
+            
             NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
         }
     }];
 }
-
 
 //MARK: TableView Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -107,17 +95,17 @@
     NSString *todoTitle = todoData[@"title"];
     NSString *todoContent = todoData[@"content"];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Title: %@ - Content: %@", todoTitle, todoContent];
+    cell.textLabel.numberOfLines = 0;
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Title: %@\nContent: %@", todoTitle, todoContent];
     
     return cell;
 }
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return [self.allTodos count];
 }
-
 
 //MARK: Buttons Pressed
 - (IBAction)logoutPressed:(id)sender {
@@ -127,20 +115,15 @@
     [self checkUserStatus];
 }
 
-
 - (IBAction)toggleTodoPressed:(id)sender {
-    
-    
     
     if(self.todoViewTopConstraint.constant == 0){
         self.todoViewTopConstraint.constant = -214;
     } else{
         self.todoViewTopConstraint.constant = 0;
     }
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.4 animations:^{
         [self.view layoutIfNeeded];
     }];
 }
-
-
 @end
