@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     self.todoViewTopConstraint.constant = -214;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
