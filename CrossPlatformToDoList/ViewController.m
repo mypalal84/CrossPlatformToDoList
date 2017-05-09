@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LoginViewController.h"
+#import "NewTodoViewController.h"
 
 @import FirebaseAuth;
 @import Firebase;
@@ -19,6 +20,8 @@
 
 @property(nonatomic)FIRDatabaseHandle allTodosHandler;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *todoViewTopConstraint;
+
 @end
 
 @implementation ViewController
@@ -26,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.todoViewTopConstraint.constant = -214;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -84,5 +88,30 @@
         }
     }];
 }
+
+
+
+- (IBAction)logoutPressed:(id)sender {
+    
+    NSError *signOutError;
+    [[FIRAuth auth]signOut:&signOutError];
+    [self checkUserStatus];
+}
+
+
+- (IBAction)toggleTodoPressed:(id)sender {
+    
+    
+    
+    if(self.todoViewTopConstraint.constant == 0){
+        self.todoViewTopConstraint.constant = -214;
+    } else{
+        self.todoViewTopConstraint.constant = 0;
+    }
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
 
 @end

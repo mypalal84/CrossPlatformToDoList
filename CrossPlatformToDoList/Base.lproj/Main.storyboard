@@ -39,7 +39,21 @@
                             <constraint firstItem="wVT-iT-ZjF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VRb-Ic-zO0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TODO LIST" id="5I2-Df-8zE"/>
+                    <navigationItem key="navigationItem" title="TODO LIST" id="5I2-Df-8zE">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="f94-ym-AF7">
+                            <connections>
+                                <action selector="logoutPressed:" destination="BYZ-38-t0r" id="CPG-nu-hqb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HRX-l7-NEy">
+                            <connections>
+                                <action selector="toggleTodoPressed:" destination="BYZ-38-t0r" id="oWQ-pL-bbq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="todoViewTopConstraint" destination="VRb-Ic-zO0" id="8L7-5k-0u8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +87,7 @@
                                 <rect key="frame" x="94" y="170" width="187.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzI-FY-7Yi">
                                 <rect key="frame" x="94" y="230" width="94" height="30"/>
@@ -162,19 +176,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW TODO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCd-YX-ulO">
-                                <rect key="frame" x="140" y="10" width="94.5" height="21"/>
+                                <rect key="frame" x="140" y="8" width="95" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="KJq-Ed-tFN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wjo-tA-GpX">
                                 <rect key="frame" x="16" y="39" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vXN-Xl-nk5"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Todo Content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSt-pj-k8C">
                                 <rect key="frame" x="16" y="77" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vCu-Cp-UvZ"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -188,6 +211,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-TF-63h">
                                 <rect key="frame" x="281" y="115" width="78" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sKc-ci-Xda"/>
+                                </constraints>
                                 <state key="normal" title="ADD TODO">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -204,16 +230,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Wjo-tA-GpX" secondAttribute="trailing" constant="16" id="01O-b8-tbD"/>
-                            <constraint firstAttribute="trailing" secondItem="gSt-pj-k8C" secondAttribute="trailing" constant="16" id="FAq-iK-B13"/>
-                            <constraint firstItem="Wjo-tA-GpX" firstAttribute="leading" secondItem="Wbz-GJ-Ney" secondAttribute="leading" constant="16" id="Fbu-v3-Rf0"/>
-                            <constraint firstItem="Wjo-tA-GpX" firstAttribute="top" secondItem="fCd-YX-ulO" secondAttribute="bottom" constant="8" id="Ite-wS-oXN"/>
-                            <constraint firstItem="fCd-YX-ulO" firstAttribute="top" secondItem="Wbz-GJ-Ney" secondAttribute="top" constant="10" id="QTw-Lb-wRC"/>
-                            <constraint firstItem="gSt-pj-k8C" firstAttribute="leading" secondItem="Wbz-GJ-Ney" secondAttribute="leading" constant="16" id="QVU-fC-FIn"/>
-                            <constraint firstItem="fCd-YX-ulO" firstAttribute="centerX" secondItem="Wbz-GJ-Ney" secondAttribute="centerX" id="dKM-bJ-msG"/>
-                            <constraint firstAttribute="bottom" secondItem="nEo-TF-63h" secondAttribute="bottom" constant="5" id="iyC-dc-sWn"/>
-                            <constraint firstItem="gSt-pj-k8C" firstAttribute="top" secondItem="Wjo-tA-GpX" secondAttribute="bottom" constant="8" id="ops-Yc-Lk4"/>
-                            <constraint firstAttribute="trailing" secondItem="nEo-TF-63h" secondAttribute="trailing" constant="16" id="zho-mW-Tv8"/>
+                            <constraint firstAttribute="bottom" secondItem="nEo-TF-63h" secondAttribute="bottom" constant="5" id="1bA-GG-dfO"/>
+                            <constraint firstItem="Wjo-tA-GpX" firstAttribute="top" secondItem="fCd-YX-ulO" secondAttribute="bottom" constant="9" id="CI7-AT-juZ"/>
+                            <constraint firstItem="fCd-YX-ulO" firstAttribute="centerX" secondItem="Wbz-GJ-Ney" secondAttribute="centerX" id="HEI-QL-yp7"/>
+                            <constraint firstItem="gSt-pj-k8C" firstAttribute="leading" secondItem="Wbz-GJ-Ney" secondAttribute="leading" constant="16" id="Zqh-a5-LAA"/>
+                            <constraint firstAttribute="trailing" secondItem="gSt-pj-k8C" secondAttribute="trailing" constant="16" id="aFS-tU-4V5"/>
+                            <constraint firstItem="Wjo-tA-GpX" firstAttribute="leading" secondItem="Wbz-GJ-Ney" secondAttribute="leading" constant="16" id="foF-Hw-iJ9"/>
+                            <constraint firstAttribute="trailing" secondItem="Wjo-tA-GpX" secondAttribute="trailing" constant="16" id="jE2-bW-LGP"/>
+                            <constraint firstItem="fCd-YX-ulO" firstAttribute="top" secondItem="Wbz-GJ-Ney" secondAttribute="top" constant="8" id="qIE-l2-PZf"/>
+                            <constraint firstAttribute="trailing" secondItem="nEo-TF-63h" secondAttribute="trailing" constant="16" id="wig-tQ-WVq"/>
+                            <constraint firstItem="gSt-pj-k8C" firstAttribute="top" secondItem="Wjo-tA-GpX" secondAttribute="bottom" constant="8" symbolic="YES" id="zdg-Hi-Gm3"/>
                         </constraints>
                     </view>
                     <connections>
