@@ -29,6 +29,7 @@
 		7F0BF06B1EC246C10060462B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF0691EC246C10060462B /* Main.storyboard */; };
 		7F0BF06D1EC246C10060462B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF06C1EC246C10060462B /* Assets.xcassets */; };
 		7F0BF0741EC248B50060462B /* TVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0731EC248B50060462B /* TVHomeViewController.m */; };
+		7F0BF0771EC26A000060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
 		8B9E301D60C98D8D2768ADDA /* libPods-CrossPlatformToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,8 @@
 		7F0BF06E1EC246C10060462B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F0BF0721EC248B50060462B /* TVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVHomeViewController.h; sourceTree = "<group>"; };
 		7F0BF0731EC248B50060462B /* TVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVHomeViewController.m; sourceTree = "<group>"; };
+		7F0BF0751EC26A000060462B /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		7F0BF0761EC26A000060462B /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		A4FDD9D1DE89F9CD85AB8961 /* Pods-CrossPlatformToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +228,8 @@
 		7F0BF0211EC0E6A20060462B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F0BF0751EC26A000060462B /* Todo.h */,
+				7F0BF0761EC26A000060462B /* Todo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0BF0241EC0EBCB0060462B /* LoginViewController.m in Sources */,
+				7F0BF0771EC26A000060462B /* Todo.m in Sources */,
 				7F0BF00E1EC0DDA20060462B /* ViewController.m in Sources */,
 				7F0BF00B1EC0DDA20060462B /* AppDelegate.m in Sources */,
 				7F0BF0271EC10E620060462B /* NewTodoViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LoginViewController.h"
 #import "NewTodoViewController.h"
+#import "Todo.h"
 
 @import FirebaseAuth;
 @import Firebase;
@@ -76,8 +77,11 @@
             
             NSString *todoTitle = todoData[@"title"];
             NSString *todoContent = todoData[@"content"];
+            Todo *currentTodo = [[Todo alloc]init];
+            currentTodo.title = todoTitle;
+            currentTodo.content = todoContent;
             
-            [self.allTodos addObject:todoData];
+            [self.allTodos addObject:currentTodo];
             [self.todoTableView reloadData];
             
             NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
@@ -90,14 +94,11 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    NSDictionary *todoData = self.allTodos[indexPath.row];
-    
-    NSString *todoTitle = todoData[@"title"];
-    NSString *todoContent = todoData[@"content"];
+    Todo *currentTodo = self.allTodos[indexPath.row];
     
     cell.textLabel.numberOfLines = 0;
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Title: %@\nContent: %@", todoTitle, todoContent];
+    cell.textLabel.text = [NSString stringWithFormat:@"Title: %@\nContent: %@", currentTodo.title, currentTodo.content];
     
     return cell;
 }
