@@ -18,18 +18,21 @@
 		7F0BF0271EC10E620060462B /* NewTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0261EC10E620060462B /* NewTodoViewController.m */; };
 		7F0BF0301EC233B30060462B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF02F1EC233B30060462B /* Assets.xcassets */; };
 		7F0BF0371EC233B40060462B /* Watchkit-todo-list Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F0BF0361EC233B40060462B /* Watchkit-todo-list Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7F0BF03D1EC233B40060462B /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF03C1EC233B40060462B /* InterfaceController.m */; };
 		7F0BF0401EC233B40060462B /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF03F1EC233B40060462B /* ExtensionDelegate.m */; };
 		7F0BF0421EC233B40060462B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF0411EC233B40060462B /* Assets.xcassets */; };
 		7F0BF0461EC233B40060462B /* Watchkit-todo-list.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7F0BF02A1EC233B30060462B /* Watchkit-todo-list.app */; };
 		7F0BF0511EC23F3C0060462B /* TodoRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0501EC23F3C0060462B /* TodoRowController.m */; };
-		7F0BF0591EC2435E0060462B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF02C1EC233B30060462B /* Interface.storyboard */; };
 		7F0BF0621EC246C10060462B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0611EC246C10060462B /* main.m */; };
 		7F0BF0651EC246C10060462B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0641EC246C10060462B /* AppDelegate.m */; };
 		7F0BF06B1EC246C10060462B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF0691EC246C10060462B /* Main.storyboard */; };
 		7F0BF06D1EC246C10060462B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF06C1EC246C10060462B /* Assets.xcassets */; };
 		7F0BF0741EC248B50060462B /* TVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0731EC248B50060462B /* TVHomeViewController.m */; };
 		7F0BF0771EC26A000060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
+		7F0BF07A1EC279510060462B /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF03C1EC233B40060462B /* InterfaceController.m */; };
+		7F0BF07C1EC27DC80060462B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF02C1EC233B30060462B /* Interface.storyboard */; };
+		7F0BF07E1EC27DDF0060462B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF02C1EC233B30060462B /* Interface.storyboard */; };
+		7F0BF07F1EC295830060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
+		7F0BF0811EC29A650060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
 		8B9E301D60C98D8D2768ADDA /* libPods-CrossPlatformToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */; };
 /* End PBXBuildFile section */
 
@@ -434,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0BF07C1EC27DC80060462B /* Interface.storyboard in Resources */,
 				7F0BF0301EC233B30060462B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F0BF0591EC2435E0060462B /* Interface.storyboard in Resources */,
+				7F0BF07E1EC27DDF0060462B /* Interface.storyboard in Resources */,
 				7F0BF0421EC233B40060462B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,8 +529,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0BF0401EC233B40060462B /* ExtensionDelegate.m in Sources */,
-				7F0BF03D1EC233B40060462B /* InterfaceController.m in Sources */,
+				7F0BF07A1EC279510060462B /* InterfaceController.m in Sources */,
 				7F0BF0511EC23F3C0060462B /* TodoRowController.m in Sources */,
+				7F0BF07F1EC295830060462B /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +542,7 @@
 				7F0BF0651EC246C10060462B /* AppDelegate.m in Sources */,
 				7F0BF0621EC246C10060462B /* main.m in Sources */,
 				7F0BF0741EC248B50060462B /* TVHomeViewController.m in Sources */,
+				7F0BF0811EC29A650060462B /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

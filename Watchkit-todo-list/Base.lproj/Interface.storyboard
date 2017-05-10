@@ -27,8 +27,8 @@
                                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
-                                        <outlet property="contentLabel" destination="VTZ-qF-jrv" id="Gtj-Wf-T9S"/>
-                                        <outlet property="titleLabel" destination="vIY-Sn-ORu" id="OwA-sc-QQG"/>
+                                        <outlet property="contentLabel" destination="VTZ-qF-jrv" id="TJx-Ee-NQP"/>
+                                        <outlet property="titleLabel" destination="vIY-Sn-ORu" id="iZd-dq-Vec"/>
                                     </connections>
                                 </tableRow>
                             </items>

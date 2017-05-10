@@ -8,13 +8,12 @@
 
 #import "InterfaceController.h"
 #import "TodoRowController.h"
-//#import "Todo.h"
+#import "Todo.h"
 
 @interface InterfaceController ()
 
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
-@property(strong, nonatomic)NSArray *allTodos;
-//@property(strong, nonatomic)NSArray<Todo *> *allTodos;
+@property(strong, nonatomic)NSArray<Todo *> *allTodos;
 
 @end
 
@@ -23,7 +22,7 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
+    [self setupTable];
     // Configure interface objects here.
 }
 
@@ -34,33 +33,26 @@
         
         TodoRowController *rowController = [self.table rowControllerAtIndex:i];
         
-        [rowController.titleLabel setText:self.allTodos[i]];
-//        [rowController.titleLabel setText:self.allTodos[i].title];
-        [rowController.contentLabel setText:self.allTodos[i]];
-//        [rowController.contentLabel setText:self.allTodos[i].content];
-
+        [rowController.titleLabel setText:self.allTodos[i].title];
+        [rowController.contentLabel setText:self.allTodos[i].content];
     }
 }
 
--(NSArray *)allTodos{
+-(NSArray<Todo *> *)allTodos{
     
-    NSString *firstTodo = @"First todo";
-    NSString *secondTodo = @"Second todo";
-    NSString *thirdTodo = @"Third todo";
+    Todo *firstTodo = [[Todo alloc]init];
+    firstTodo.title = @"First Todo";
+    firstTodo.content = @"This is a todo";
+    
+    Todo *secondTodo = [[Todo alloc]init];
+    secondTodo.title = @"Second Todo";
+    secondTodo.content = @"This is also a todo";
+    
+    Todo *thirdTodo = [[Todo alloc]init];
+    thirdTodo.title = @"Third Todo";
+    thirdTodo.content = @"Yet another todo";
+    
     return @[firstTodo, secondTodo, thirdTodo];
-//    Todo *firstTodo = [[Todo alloc]init];
-//    firstTodo.title = @"First Todo";
-//    firstTodo.content = @"This is a todo";
-//    
-//    Todo *secondTodo = [[Todo alloc]init];
-//    secondTodo.title = @"Second Todo";
-//    secondTodo.content = @"This is also a todo";
-//    
-//    Todo *thirdTodo = [[Todo alloc]init];
-//    thirdTodo.title = @"First Todo";
-//    thirdTodo.content = @"Yet another todo";
-//    
-//    return @[firstTodo, secondTodo, thirdTodo];
 }
 
 - (void)willActivate {
