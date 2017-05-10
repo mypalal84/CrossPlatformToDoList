@@ -1,6 +1,7 @@
 
 # Created by https://www.gitignore.io/api/macos,swift,xcode,objective-c
 
+*Credentials.h
 Credentials.h
 
 ### macOS ###
