@@ -64,16 +64,17 @@
                     <navigationItem key="navigationItem" title="TODO LIST:" id="a5e-mH-otU"/>
                     <connections>
                         <outlet property="tableView" destination="QHj-Ir-03J" id="aLg-Ko-QlV"/>
+                        <segue destination="5fc-xu-k8B" kind="show" identifier="PresentTodoDetailsViewController" id="mka-Jw-2AY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2201" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Todo Details View Controller-->
         <scene sceneID="dJs-HO-fpZ">
             <objects>
-                <viewController id="5fc-xu-k8B" sceneMemberID="viewController">
+                <viewController id="5fc-xu-k8B" customClass="TVTodoDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LlV-4C-C3m"/>
                         <viewControllerLayoutGuide type="bottom" id="6gh-df-Wfj"/>
@@ -82,18 +83,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELLO TODO LIST!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjg-dF-Nsa">
-                                <rect key="frame" x="541" y="481" width="838" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjg-dF-Nsa">
+                                <rect key="frame" x="360" y="24" width="1200" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="GYM-kl-5Mv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtj-jq-Ab7">
+                                <rect key="frame" x="360" y="384" width="1200" height="672"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Wjg-dF-Nsa" firstAttribute="centerY" secondItem="3lA-bm-uyS" secondAttribute="centerY" id="Rnk-Ui-OKR"/>
-                            <constraint firstItem="Wjg-dF-Nsa" firstAttribute="centerX" secondItem="3lA-bm-uyS" secondAttribute="centerX" id="pp6-gj-6iQ"/>
+                            <constraint firstAttribute="trailing" secondItem="rtj-jq-Ab7" secondAttribute="trailing" constant="360" id="Lzm-NB-ImU"/>
+                            <constraint firstAttribute="trailing" secondItem="Wjg-dF-Nsa" secondAttribute="trailing" constant="360" id="Mmh-0O-V7z"/>
+                            <constraint firstItem="rtj-jq-Ab7" firstAttribute="top" secondItem="Wjg-dF-Nsa" secondAttribute="bottom" constant="120" id="N9l-z2-Dqc"/>
+                            <constraint firstItem="Wjg-dF-Nsa" firstAttribute="leading" secondItem="3lA-bm-uyS" secondAttribute="leading" constant="360" id="OpR-Cq-2Px"/>
+                            <constraint firstItem="rtj-jq-Ab7" firstAttribute="leading" secondItem="3lA-bm-uyS" secondAttribute="leading" constant="360" id="oRo-9R-RF3"/>
+                            <constraint firstItem="Wjg-dF-Nsa" firstAttribute="top" secondItem="LlV-4C-C3m" secondAttribute="bottom" constant="24" id="qCH-FK-buf"/>
+                            <constraint firstItem="6gh-df-Wfj" firstAttribute="top" secondItem="rtj-jq-Ab7" secondAttribute="bottom" constant="24" id="v9z-F9-5Hg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailContentLabel" destination="rtj-jq-Ab7" id="Wnc-A9-Sto"/>
+                        <outlet property="detailTitleLabel" destination="Wjg-dF-Nsa" id="TKC-m6-UjZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2t6-je-cma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
