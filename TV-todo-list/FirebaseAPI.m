@@ -44,7 +44,13 @@
             }
         }
         if (completion) {
-            completion(allTodos);
+//            completion(allTodos);
+//            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+//                completion(allTodos);
+//            }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(allTodos);
+            });
         }
     }] resume];
 }
