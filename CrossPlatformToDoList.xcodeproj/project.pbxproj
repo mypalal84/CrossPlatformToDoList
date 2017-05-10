@@ -33,6 +33,7 @@
 		7F0BF07E1EC27DDF0060462B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF02C1EC233B30060462B /* Interface.storyboard */; };
 		7F0BF07F1EC295830060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
 		7F0BF0811EC29A650060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
+		7FF664A61EC2A2BC00841FFD /* TodoDetailsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF664A51EC2A2BC00841FFD /* TodoDetailsInterfaceController.m */; };
 		8B9E301D60C98D8D2768ADDA /* libPods-CrossPlatformToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6039B8F203ED51F60310DA /* libPods-CrossPlatformToDoList.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,8 @@
 		7F0BF0731EC248B50060462B /* TVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVHomeViewController.m; sourceTree = "<group>"; };
 		7F0BF0751EC26A000060462B /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
 		7F0BF0761EC26A000060462B /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		7FF664A41EC2A2BC00841FFD /* TodoDetailsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoDetailsInterfaceController.h; sourceTree = "<group>"; };
+		7FF664A51EC2A2BC00841FFD /* TodoDetailsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoDetailsInterfaceController.m; sourceTree = "<group>"; };
 		A4FDD9D1DE89F9CD85AB8961 /* Pods-CrossPlatformToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrossPlatformToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CrossPlatformToDoList/Pods-CrossPlatformToDoList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +257,8 @@
 				7F0BF0501EC23F3C0060462B /* TodoRowController.m */,
 				7F0BF03B1EC233B40060462B /* InterfaceController.h */,
 				7F0BF03C1EC233B40060462B /* InterfaceController.m */,
+				7FF664A41EC2A2BC00841FFD /* TodoDetailsInterfaceController.h */,
+				7FF664A51EC2A2BC00841FFD /* TodoDetailsInterfaceController.m */,
 				7F0BF03E1EC233B40060462B /* ExtensionDelegate.h */,
 				7F0BF03F1EC233B40060462B /* ExtensionDelegate.m */,
 				7F0BF0411EC233B40060462B /* Assets.xcassets */,
@@ -529,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0BF0401EC233B40060462B /* ExtensionDelegate.m in Sources */,
+				7FF664A61EC2A2BC00841FFD /* TodoDetailsInterfaceController.m in Sources */,
 				7F0BF07A1EC279510060462B /* InterfaceController.m in Sources */,
 				7F0BF0511EC23F3C0060462B /* TodoRowController.m in Sources */,
 				7F0BF07F1EC295830060462B /* Todo.m in Sources */,
@@ -839,6 +845,7 @@
 				7F0BF04A1EC233B40060462B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F0BF04D1EC233B40060462B /* Build configuration list for PBXNativeTarget "Watchkit-todo-list" */ = {
 			isa = XCConfigurationList;
@@ -847,6 +854,7 @@
 				7F0BF0481EC233B40060462B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F0BF06F1EC246C10060462B /* Build configuration list for PBXNativeTarget "TV-todo-list" */ = {
 			isa = XCConfigurationList;
@@ -855,6 +863,7 @@
 				7F0BF0711EC246C10060462B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

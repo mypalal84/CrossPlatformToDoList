@@ -19,10 +19,12 @@
                                 <tableRow identifier="TodoRowController" id="dO9-UN-Mj7" customClass="TodoRowController">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="hW4-ed-tqZ">
                                         <items>
-                                            <label alignment="left" text="Title" id="vIY-Sn-ORu">
+                                            <label alignment="left" text="Title" numberOfLines="0" id="vIY-Sn-ORu">
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
-                                            <label alignment="left" text="Content" id="VTZ-qF-jrv"/>
+                                            <label alignment="left" text="Content" numberOfLines="0" id="VTZ-qF-jrv">
+                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                            </label>
                                         </items>
                                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
@@ -48,6 +50,27 @@
                     </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--TodoDetailsInterfaceController-->
+        <scene sceneID="4Bl-B8-P4o">
+            <objects>
+                <controller identifier="TodoDetailsInterfaceController" id="wIE-PT-VaM" customClass="TodoDetailsInterfaceController">
+                    <items>
+                        <label width="136" alignment="left" text="Title" numberOfLines="0" id="8QF-nG-1oK">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" id="gSI-ea-7kZ"/>
+                        <label width="136" alignment="left" text="Content" numberOfLines="0" id="zGR-Tn-cPN">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="contentLabel" destination="zGR-Tn-cPN" id="Ief-sp-LQS"/>
+                        <outlet property="titleLabel" destination="8QF-nG-1oK" id="vII-T6-Mkl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="318" y="46"/>
         </scene>
     </scenes>
 </document>

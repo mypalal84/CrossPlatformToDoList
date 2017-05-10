@@ -38,6 +38,11 @@
     }
 }
 
+-(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex{
+    
+    [self pushControllerWithName:@"TodoDetailsInterfaceController" context:[self.allTodos objectAtIndex:rowIndex]];
+}
+
 -(NSArray<Todo *> *)allTodos{
     
     Todo *firstTodo = [[Todo alloc]init];
@@ -64,12 +69,6 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
-
--(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex{
-    
-    
-}
-
 
 - (IBAction)newTodoPressed {
     
