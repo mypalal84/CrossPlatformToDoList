@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--InterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <table alignment="left" id="5Hq-nd-f3k">
+                            <items>
+                                <tableRow identifier="TodoRowController" id="dO9-UN-Mj7" customClass="TodoRowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="hW4-ed-tqZ">
+                                        <items>
+                                            <label alignment="left" text="Title" numberOfLines="0" id="vIY-Sn-ORu">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Content" numberOfLines="0" id="VTZ-qF-jrv">
+                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="contentLabel" destination="VTZ-qF-jrv" id="TJx-Ee-NQP"/>
+                                        <outlet property="titleLabel" destination="vIY-Sn-ORu" id="iZd-dq-Vec"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="NEW TODO" id="zfq-U2-H8q">
+                            <connections>
+                                <action selector="newTodoPressed" destination="AgC-eL-Hgc" id="6eg-eD-qxW"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="device=watch42mm">
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </variation>
+                    <connections>
+                        <outlet property="table" destination="5Hq-nd-f3k" id="cJ2-oV-H16"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--TodoDetailsInterfaceController-->
+        <scene sceneID="4Bl-B8-P4o">
+            <objects>
+                <controller identifier="TodoDetailsInterfaceController" id="wIE-PT-VaM" customClass="TodoDetailsInterfaceController">
+                    <items>
+                        <label width="136" alignment="left" text="Title" numberOfLines="0" id="8QF-nG-1oK">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" id="gSI-ea-7kZ"/>
+                        <label width="136" alignment="left" text="Content" numberOfLines="0" id="zGR-Tn-cPN">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="contentLabel" destination="zGR-Tn-cPN" id="Ief-sp-LQS"/>
+                        <outlet property="titleLabel" destination="8QF-nG-1oK" id="vII-T6-Mkl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="318" y="46"/>
+        </scene>
+    </scenes>
+</document>
