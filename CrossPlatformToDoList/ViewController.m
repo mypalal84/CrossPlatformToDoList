@@ -89,6 +89,7 @@
             currentTodo.uniqueKey = child.key;
             currentTodo.isCompleted = todoData[@"isCompleted"];
             if ([currentTodo.isCompleted isEqual:@0]) {
+                
                 [self.filteredTodos addObject:currentTodo];
             }
             [self.allTodos addObject:currentTodo];
@@ -119,11 +120,6 @@
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"selected row: %@",indexPath);
 }
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{

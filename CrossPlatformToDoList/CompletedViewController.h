@@ -10,7 +10,4 @@
 
 @interface CompletedViewController : UIViewController
 
-@property(strong, nonatomic)NSNumber *isCompleted;
-
-
 @end
