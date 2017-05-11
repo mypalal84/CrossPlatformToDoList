@@ -11,11 +11,14 @@
 #import "NewTodoViewController.h"
 #import "Todo.h"
 
+
 @import FirebaseAuth;
 @import Firebase;
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
+//@property(strong, nonatomic)UITableViewRowAction *rowAction;
+//@property(strong, nonatomic)UITableViewRowAction *secondRowAction;
 @property(strong, nonatomic)FIRDatabaseReference *userReference;
 @property(strong, nonatomic)FIRUser *currentUser;
 @property(nonatomic)FIRDatabaseHandle allTodosHandler;
@@ -75,16 +78,14 @@
             
             NSDictionary *todoData = child.value;
             
-            NSString *todoTitle = todoData[@"title"];
-            NSString *todoContent = todoData[@"content"];
             Todo *currentTodo = [[Todo alloc]init];
-            currentTodo.title = todoTitle;
-            currentTodo.content = todoContent;
+            currentTodo.title = todoData[@"title"];
+            currentTodo.content = todoData[@"content"];
+            currentTodo.uniqueKey = child.key;
+            currentTodo.isCompleted = todoData[@"isCompleted"];
             
             [self.allTodos addObject:currentTodo];
             [self.todoTableView reloadData];
-            
-            NSLog(@"Todo Title: %@ - Content: %@", todoTitle, todoContent);
         }
     }];
 }
@@ -112,6 +113,16 @@
     return [self.allTodos count];
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Todo *todo = self.allTodos[indexPath.row];
+        [[[self.userReference child:@"todos"] child:todo.uniqueKey] removeValue];
+    }
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 
 //MARK: Buttons Pressed
 - (IBAction)logoutPressed:(id)sender {
