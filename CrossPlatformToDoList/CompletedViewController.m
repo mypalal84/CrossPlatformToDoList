@@ -7,8 +7,13 @@
 //
 
 #import "CompletedViewController.h"
+#import "ViewController.h"
+#import "Todo.h"
 
-@interface CompletedViewController ()
+@interface CompletedViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(strong, nonatomic)NSMutableArray *allTodos;
 
 @end
 
@@ -16,22 +21,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//MARK: TableView Methods
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    Todo *currentTodo = self.allTodos[indexPath.row];
+    
+    cell.textLabel.numberOfLines = 0;
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Title: %@\nContent: %@", currentTodo.title, currentTodo.content];
+    
+    return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    tableView.estimatedRowHeight = 85.0;
+    
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    return [self.allTodos count];
 }
-*/
+
 
 @end

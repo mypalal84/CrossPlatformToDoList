@@ -10,10 +10,11 @@
 
 @implementation Todo
 
--(instancetype)initWithTitle:(NSString *)title withContent:(NSString *)content{
+-(instancetype)initWithTitle:(NSString *)title withContent:(NSString *)content andIsCompleted:(NSNumber *)isCompleted{
     
     self.title = title;
     self.content = content;
+    self.isCompleted = isCompleted;
     
     return self;
 }
