@@ -8,10 +8,18 @@
 
 #import "ExtensionDelegate.h"
 
+@import WatchConnectivity;
+
+@interface ExtensionDelegate ()<WCSessionDelegate>
+
+@end
+
 @implementation ExtensionDelegate
 
 - (void)applicationDidFinishLaunching {
     // Perform any final initialization of your application.
+    [[WCSession defaultSession]setDelegate:self];
+    [[WCSession defaultSession]activateSession];
 }
 
 - (void)applicationDidBecomeActive {

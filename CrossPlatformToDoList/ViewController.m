@@ -17,8 +17,6 @@
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-//@property(strong, nonatomic)UITableViewRowAction *rowAction;
-//@property(strong, nonatomic)UITableViewRowAction *secondRowAction;
 @property(strong, nonatomic)FIRDatabaseReference *userReference;
 @property(strong, nonatomic)FIRUser *currentUser;
 @property(nonatomic)FIRDatabaseHandle allTodosHandler;
@@ -64,8 +62,6 @@
     self.currentUser = [[FIRAuth auth]currentUser];
     
     self.userReference = [[databaseReference child:@"users"]child:self.currentUser.uid];
-    
-    NSLog(@"User Reference: %@", self.userReference);
 }
 
 -(void)startMontiringTodoUpdates{
@@ -98,15 +94,15 @@
     Todo *currentTodo = self.allTodos[indexPath.row];
     
     cell.textLabel.numberOfLines = 0;
-    
     cell.textLabel.text = [NSString stringWithFormat:@"Title: %@\nContent: %@", currentTodo.title, currentTodo.content];
     
     return cell;
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    tableView.estimatedRowHeight = 85.0;
+    tableView.estimatedRowHeight = 33.0;
     
     tableView.rowHeight = UITableViewAutomaticDimension;
     
@@ -122,6 +118,11 @@
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleInsert;
 }
 
 //MARK: Buttons Pressed
