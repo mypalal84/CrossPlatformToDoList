@@ -36,9 +36,14 @@
     
     FIRDatabaseReference *newTodoReference = [[userReference child:@"todos"]childByAutoId];
     
+    [[newTodoReference child:@"email"]setValue:currentUser.email];
+    [[newTodoReference child:@"uniqueKey"]setValue:newTodoReference.key];
     [[newTodoReference child:@"title"]setValue:self.titleTextField.text];
     [[newTodoReference child:@"content"]setValue:self.contentTextField.text];
     [[newTodoReference child:@"isCompleted"]setValue:@0];
+    
+    self.titleTextField.text = nil;
+    self.contentTextField.text = nil;
 }
 
 

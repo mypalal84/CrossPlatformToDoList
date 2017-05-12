@@ -84,6 +84,7 @@
             NSDictionary *todoData = child.value;
             
             Todo *currentTodo = [[Todo alloc]init];
+            currentTodo.email = todoData[@"email"];
             currentTodo.title = todoData[@"title"];
             currentTodo.content = todoData[@"content"];
             currentTodo.uniqueKey = child.key;
