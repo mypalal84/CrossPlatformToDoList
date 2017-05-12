@@ -36,8 +36,11 @@
             for (NSDictionary *todoDictionary in userTodos) {
                 
                 Todo *newTodo = [[Todo alloc]init];
+                newTodo.email = todoDictionary[@"email"];
+                newTodo.uniqueKey = todoDictionary[@"uniqueKey"];
                 newTodo.title = todoDictionary[@"title"];
                 newTodo.content = todoDictionary[@"content"];
+                newTodo.isCompleted = todoDictionary[@"isCompleted"];
                 //assign other todo properties here
                 
                 [allTodos addObject:newTodo];

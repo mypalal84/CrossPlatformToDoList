@@ -10,11 +10,13 @@
 
 @implementation Todo
 
--(instancetype)initWithTitle:(NSString *)title withContent:(NSString *)content andIsCompleted:(NSNumber *)isCompleted{
+-(instancetype)initWithEmail:(NSString *)email withUniqueKey:(NSString *)uniqueKey withTitle:(NSString *)title withContent:(NSString *)content andIsCompleted:(NSNumber *)isCompleted{
     
+    self.email = email;
+    self.uniqueKey = uniqueKey;
     self.title = title;
     self.content = content;
-    self.isCompleted = isCompleted;
+    self.isCompleted = @0;
     
     return self;
 }

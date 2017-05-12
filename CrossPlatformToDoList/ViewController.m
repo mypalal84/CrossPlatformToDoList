@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LoginViewController.h"
 #import "NewTodoViewController.h"
+#import "CompletedViewController.h"
 #import "Todo.h"
 
 
@@ -17,30 +18,35 @@
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-//@property(strong, nonatomic)UITableViewRowAction *rowAction;
-//@property(strong, nonatomic)UITableViewRowAction *secondRowAction;
 @property(strong, nonatomic)FIRDatabaseReference *userReference;
 @property(strong, nonatomic)FIRUser *currentUser;
 @property(nonatomic)FIRDatabaseHandle allTodosHandler;
-@property(strong, nonatomic)NSMutableArray *allTodos;
+@property(strong, nonatomic)NSMutableArray<Todo *> *allTodos;
+@property(strong, nonatomic)NSMutableArray<Todo *> *completedTodos;
+@property(strong, nonatomic)NSMutableArray<Todo *> *filteredTodos; // completed = 0
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todoViewTopConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *todoTableView;
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.completedTodos = [[NSMutableArray alloc]init];
+    self.todoViewTopConstraint.constant = -150;
+    self.todoTableView.estimatedRowHeight = 33.0;
+
+    self.todoTableView.rowHeight = UITableViewAutomaticDimension;
     
-    self.todoViewTopConstraint.constant = -214;
+    self.todoTableView.dataSource = self;
+    self.todoTableView.delegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
     [self checkUserStatus];
-    self.todoTableView.dataSource = self;
 }
 
 -(void)checkUserStatus{
@@ -64,8 +70,6 @@
     self.currentUser = [[FIRAuth auth]currentUser];
     
     self.userReference = [[databaseReference child:@"users"]child:self.currentUser.uid];
-    
-    NSLog(@"User Reference: %@", self.userReference);
 }
 
 -(void)startMontiringTodoUpdates{
@@ -73,17 +77,22 @@
     self.allTodosHandler = [[self.userReference child:@"todos"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
         self.allTodos = [[NSMutableArray alloc]init];
+        self.filteredTodos = [[NSMutableArray alloc] init];
         
         for (FIRDataSnapshot *child in snapshot.children) {
             
             NSDictionary *todoData = child.value;
             
             Todo *currentTodo = [[Todo alloc]init];
+            currentTodo.email = todoData[@"email"];
             currentTodo.title = todoData[@"title"];
             currentTodo.content = todoData[@"content"];
             currentTodo.uniqueKey = child.key;
             currentTodo.isCompleted = todoData[@"isCompleted"];
-            
+            if ([currentTodo.isCompleted isEqual:@0]) {
+                
+                [self.filteredTodos addObject:currentTodo];
+            }
             [self.allTodos addObject:currentTodo];
             [self.todoTableView reloadData];
         }
@@ -95,33 +104,44 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    Todo *currentTodo = self.allTodos[indexPath.row];
+    Todo *currentTodo = self.filteredTodos[indexPath.row];
+    
     
     cell.textLabel.numberOfLines = 0;
-    
     cell.textLabel.text = [NSString stringWithFormat:@"Title: %@\nContent: %@", currentTodo.title, currentTodo.content];
     
     return cell;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    tableView.estimatedRowHeight = 85.0;
-    
-    tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    return [self.allTodos count];
-}
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Todo *todo = self.allTodos[indexPath.row];
-        [[[self.userReference child:@"todos"] child:todo.uniqueKey] removeValue];
-    }
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return [self.filteredTodos count];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
+}
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    Todo *todo = self.filteredTodos[indexPath.row];
+
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"DELETE" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+        [[[self.userReference child:@"todos"] child:todo.uniqueKey] removeValue];
+    }];
+    deleteAction.backgroundColor = [UIColor redColor];
+    
+    UITableViewRowAction *completedAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"COMPLETED" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+       
+        todo.isCompleted = @1;
+        [[[self.userReference child:@"todos"]child:todo.uniqueKey]updateChildValues:@{@"isCompleted": @1}];
+        [self.completedTodos addObject:todo];
+        [self.todoTableView reloadData];
+    }];
+    completedAction.backgroundColor = [UIColor blueColor];
+    
+    return @[deleteAction, completedAction];
 }
 
 //MARK: Buttons Pressed
@@ -139,7 +159,8 @@
 - (IBAction)toggleTodoPressed:(id)sender {
     
     if(self.todoViewTopConstraint.constant == 0){
-        self.todoViewTopConstraint.constant = -214;
+        self.todoViewTopConstraint.constant = -150;
+
     } else{
         self.todoViewTopConstraint.constant = 0;
     }
@@ -147,4 +168,5 @@
         [self.view layoutIfNeeded];
     }];
 }
+
 @end

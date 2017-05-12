@@ -33,6 +33,7 @@
 		7F0BF07E1EC27DDF0060462B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF02C1EC233B30060462B /* Interface.storyboard */; };
 		7F0BF07F1EC295830060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
 		7F0BF0811EC29A650060462B /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0BF0761EC26A000060462B /* Todo.m */; };
+		7F9B1FDB1EC5390D00178C77 /* TVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B1FDA1EC5390D00178C77 /* TVLoginViewController.m */; };
 		7FF664A61EC2A2BC00841FFD /* TodoDetailsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF664A51EC2A2BC00841FFD /* TodoDetailsInterfaceController.m */; };
 		7FF664A91EC2B05700841FFD /* TVTodoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF664A81EC2B05700841FFD /* TVTodoDetailsViewController.m */; };
 		7FF664B31EC3843700841FFD /* FirebaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF664B21EC3843700841FFD /* FirebaseAPI.m */; };
@@ -124,6 +125,8 @@
 		7F0BF0731EC248B50060462B /* TVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVHomeViewController.m; sourceTree = "<group>"; };
 		7F0BF0751EC26A000060462B /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
 		7F0BF0761EC26A000060462B /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		7F9B1FD91EC5390D00178C77 /* TVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVLoginViewController.h; sourceTree = "<group>"; };
+		7F9B1FDA1EC5390D00178C77 /* TVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVLoginViewController.m; sourceTree = "<group>"; };
 		7FF664A41EC2A2BC00841FFD /* TodoDetailsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoDetailsInterfaceController.h; sourceTree = "<group>"; };
 		7FF664A51EC2A2BC00841FFD /* TodoDetailsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoDetailsInterfaceController.m; sourceTree = "<group>"; };
 		7FF664A71EC2B05700841FFD /* TVTodoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVTodoDetailsViewController.h; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 		7FF664AD1EC2B07D00841FFD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F9B1FD91EC5390D00178C77 /* TVLoginViewController.h */,
+				7F9B1FDA1EC5390D00178C77 /* TVLoginViewController.m */,
 				7FF664A71EC2B05700841FFD /* TVTodoDetailsViewController.h */,
 				7FF664A81EC2B05700841FFD /* TVTodoDetailsViewController.m */,
 				7F0BF0721EC248B50060462B /* TVHomeViewController.h */,
@@ -617,6 +622,7 @@
 				7F0BF0621EC246C10060462B /* main.m in Sources */,
 				7F0BF0741EC248B50060462B /* TVHomeViewController.m in Sources */,
 				7F0BF0811EC29A650060462B /* Todo.m in Sources */,
+				7F9B1FDB1EC5390D00178C77 /* TVLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

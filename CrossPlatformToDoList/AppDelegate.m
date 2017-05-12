@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 
 @import Firebase;
+@import WatchConnectivity;
 
-@interface AppDelegate ()
+typedef void(^FirebaseCallback)(NSArray *allTodos);
+
+@interface AppDelegate ()<WCSessionDelegate>
 
 @end
 
@@ -21,7 +24,33 @@
     // Override point for customization after application launch.
     [FIRApp configure];
     
+    [[WCSession defaultSession]setDelegate:self];
+    [[WCSession defaultSession]activateSession];
+    
     return YES;
+}
+
+-(void)startMonitoringTodoUpdates:(FirebaseCallback)callback{
+    
+    FIRDatabaseReference *databaseReference = [[FIRDatabase database]reference];
+    
+    FIRUser *currentUser = [[FIRAuth auth]currentUser];
+    
+    FIRDatabaseReference *userReference = [[databaseReference child:@"users"]child:currentUser.uid];
+    
+    [[userReference child:@"todos"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+        NSMutableArray *todoDictionaries = [[NSMutableArray alloc]init];
+        
+        for (FIRDataSnapshot *todoReference in snapshot.children) {
+            
+            [todoDictionaries addObject:todoReference.value];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            callback(todoDictionaries.copy);
+        });
+    }];
 }
 
 
@@ -49,6 +78,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
+    
+    [self startMonitoringTodoUpdates:^(NSArray *allTodos) {
+        
+        replyHandler(@{@"todos": allTodos});
+    }];
 }
 
 
