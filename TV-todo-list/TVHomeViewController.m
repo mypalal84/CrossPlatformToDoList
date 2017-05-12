@@ -10,11 +10,12 @@
 #import "TVTodoDetailsViewController.h"
 #import "Todo.h"
 #import "FirebaseAPI.h"
+#import "TVLoginViewController.h"
 
 @interface TVHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic)NSArray<Todo *> *allTodos;
-
+@property(strong, nonatomic)NSString *userEmail;
 @property(weak, nonatomic)IBOutlet UITableView *tableView;
 
 @end
@@ -23,7 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self checkEmail];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -35,22 +38,14 @@
     }];
 }
 
-//-(NSArray *)allTodos{
-//    
-//        Todo *firstTodo = [[Todo alloc]init];
-//        firstTodo.title = @"First Todo";
-//        firstTodo.content = @"This is a todo";
-//    
-//        Todo *secondTodo = [[Todo alloc]init];
-//        secondTodo.title = @"Second Todo";
-//        secondTodo.content = @"This is also a todo";
-//    
-//        Todo *thirdTodo = [[Todo alloc]init];
-//        thirdTodo.title = @"Third Todo";
-//        thirdTodo.content = @"Yet another todo";
-//    
-//        return @[firstTodo, secondTodo, thirdTodo];
-//}
+-(void)checkEmail{
+    
+    if (!self.userEmail) {
+        TVLoginViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"TVLoginViewController"];
+        
+        [self presentViewController:view animated:YES completion:nil];
+    }
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -80,6 +75,5 @@
     
     [self performSegueWithIdentifier:@"PresentTodoDetailsViewController" sender:indexPath];
 }
-
 
 @end

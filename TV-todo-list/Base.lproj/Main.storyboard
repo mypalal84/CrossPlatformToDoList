@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjg-dF-Nsa">
-                                <rect key="frame" x="360" y="24" width="1200" height="240"/>
+                                <rect key="frame" x="360" y="169" width="1200" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="GYM-kl-5Mv"/>
                                 </constraints>
@@ -93,7 +93,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtj-jq-Ab7">
-                                <rect key="frame" x="360" y="384" width="1200" height="672"/>
+                                <rect key="frame" x="360" y="529" width="1200" height="527"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -135,6 +135,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2I-3L-2WG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-314" y="75"/>
+        </scene>
+        <!--TVLoginViewController-->
+        <scene sceneID="Oo6-5e-IXI">
+            <objects>
+                <viewController storyboardIdentifier="TVLoginViewController" title="TVLoginViewController" id="pXS-aE-afv" customClass="TVLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X7X-gy-T2e"/>
+                        <viewControllerLayoutGuide type="bottom" id="7My-Yo-DLn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1lS-3J-GDY">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uV9-zq-DoJ">
+                                <rect key="frame" x="320" y="200" width="1280" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EP5-Vb-QEb"/>
+                                    <constraint firstAttribute="width" constant="1280" id="GqC-yi-n1g"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jJ-Zh-lzm">
+                                <rect key="frame" x="810" y="465" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2cB-XT-Tu9"/>
+                                    <constraint firstAttribute="height" constant="150" id="GnX-Dt-RMc"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="GO!"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="pXS-aE-afv" eventType="primaryActionTriggered" id="S6h-TI-kJg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uV9-zq-DoJ" firstAttribute="top" secondItem="X7X-gy-T2e" secondAttribute="bottom" constant="200" id="0a7-bI-8Y8"/>
+                            <constraint firstItem="0jJ-Zh-lzm" firstAttribute="centerX" secondItem="1lS-3J-GDY" secondAttribute="centerX" id="N3v-BO-L9r"/>
+                            <constraint firstItem="uV9-zq-DoJ" firstAttribute="centerX" secondItem="1lS-3J-GDY" secondAttribute="centerX" id="Ozt-h2-hCs"/>
+                            <constraint firstItem="0jJ-Zh-lzm" firstAttribute="centerY" secondItem="1lS-3J-GDY" secondAttribute="centerY" id="zFi-Wc-hBC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="uV9-zq-DoJ" id="P3O-fR-QGw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3T-cB-fN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331" y="1652"/>
         </scene>
     </scenes>
 </document>
