@@ -1,2 +1,2 @@
 # CrossPlatformToDoList
-Cross Platform To Do List using Firebase, WatchOS, and TVOS
+Cross Platform To Do List using Firebase NoSQL, WatchOS, and TVOS
